@@ -1,6 +1,7 @@
 import { useLoaderData, Link} from "@remix-run/react";
 import {redirect} from '@remix-run/node';
 import { db } from '~/utils/db.server'
+import {getUser} from '~/utils/session.server'
 
 export const loader = async ({ params }) => {
     const post = await db.post.findUnique({
